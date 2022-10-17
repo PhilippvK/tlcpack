@@ -4,12 +4,12 @@ name: Wheel-Manylinux-Nightly
 on:
   push:
     branches:
-      - main
+      - temp
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: '0 6 * * *' # 6 AM UTC
+  # schedule:
+  #   - cron: '0 6 * * *' # 6 AM UTC
 
 jobs:
   Build:
