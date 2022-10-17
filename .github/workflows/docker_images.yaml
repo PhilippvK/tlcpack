@@ -41,5 +41,5 @@ jobs:
       run: |
         set -eux
         NEW_TAG=$(git log -1 --format='%h')
-        docker tag tlcpack/package-${{ matrix.platform }}:staging tlcpack/package-${{ matrix.platform }}:$NEW_TAG
-        docker push tlcpack/package-${{ matrix.platform }}:$NEW_TAG
+        docker tag philippvk/package-${{ matrix.platform }}:staging philippvk/package-${{ matrix.platform }}:$NEW_TAG
+        docker push philippvk/package-${{ matrix.platform }}:$NEW_TAG
