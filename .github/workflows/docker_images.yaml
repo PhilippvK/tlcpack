@@ -3,10 +3,11 @@ name: Build Docker images
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
-  schedule:
-    - cron: '0 5 * * 3'
+      #- main
+      - temp
+  # workflow_dispatch:
+  # schedule:
+  #   - cron: '0 5 * * 3'
 
 jobs:
   Build:
