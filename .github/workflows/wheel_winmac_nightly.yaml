@@ -51,7 +51,7 @@ jobs:
       if: startsWith(matrix.os, 'macOS')
       shell: bash -l {0}
       run: >-
-        brew install llvm@14 && clang --version && which clang && wheel/build_lib_osx.sh
+        ls /usr/local/opt/ && echo "/usr/local/opt/llvm/bin" >> $GITHUB_PATH && clang --version && which clang && wheel/build_lib_osx.sh
     - name: Build@Win
       if: startsWith(matrix.os, 'windows')
       shell: cmd /C call {0}
