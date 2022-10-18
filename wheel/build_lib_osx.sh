@@ -9,6 +9,14 @@ rm -rf build
 mkdir -p build
 cd build
 
+ls /usr/local/opt/llvm@14/bin
+export PATH="/usr/local/opt/llvm@14/bin:$PATH"
+echo $PATH
+llvm-config
+which llvm-config
+clang --version
+which clang
+
 MACOSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET:-10.11}
 
 cmake -DCMAKE_BUILD_TYPE=Release \
