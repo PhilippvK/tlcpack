@@ -12,6 +12,7 @@ cd build
 
 export PATH="/usr/local/opt/llvm@14/bin:$PATH"
 which llvm-config
+export LDFLAGS="-L$(brew --prefix)/opt/llvm@14/lib/c++ -Wl,-rpath,$(brew --prefix)/opt/llvm@14/lib/c++"
 
 MACOSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET:-10.11}
 
