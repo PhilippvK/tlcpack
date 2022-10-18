@@ -51,6 +51,7 @@ jobs:
       if: startsWith(matrix.os, 'macOS')
       shell: bash -l {0}
       run: >-
+        brew install llvm-14
         wheel/build_lib_osx.sh
     - name: Build@Win
       if: startsWith(matrix.os, 'windows')
