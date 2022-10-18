@@ -10,12 +10,13 @@ mkdir -p build
 cd build
 
 ls /usr/local/opt/llvm@14/bin
+echo PATHBEFORE=$PATH
 export PATH="/usr/local/opt/llvm@14/bin:$PATH"
-echo $PATH
-llvm-config
+echo PATHAFTER=$PATH
 which llvm-config
 clang --version
 which clang
+locate clang
 
 MACOSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET:-10.11}
 
