@@ -3,20 +3,22 @@ name: Wheel-WinMac-Nightly
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  schedule:
-    - cron: '0 6 * * *' # 6 AM UTC
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+#   schedule:
+#     - cron: '0 6 * * *' # 6 AM UTC
 
 jobs:
   Build:
     strategy:
       matrix:
-        os: [macOS-latest, windows-2019]
-        pkg: ['tlcpack', 'tlcpack-nightly']
+        # os: [macOS-latest, windows-2019]
+        os: [macOS-latest]
+        # pkg: ['tlcpack', 'tlcpack-nightly']
+        pkg: ['tlcpack-nightly']
 
     runs-on: ${{ matrix.os }}
 
