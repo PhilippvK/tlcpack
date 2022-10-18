@@ -17,10 +17,10 @@ jobs:
         platform:
           - cpu
           - cu102
-          - cu110
-          - cu111
-          - cu113
-          - cu116
+          # - cu110
+          # - cu111
+          # - cu113
+          # - cu116
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -37,7 +37,7 @@ jobs:
         cd docker
         bash build_image.sh ${{ matrix.platform }}
     - name: Upload to Docker Hub
-      if: ${{ github.ref == 'refs/heads/main' }}
+      # if: ${{ github.ref == 'refs/heads/main' }}
       run: |
         set -eux
         NEW_TAG=$(git log -1 --format='%h')
