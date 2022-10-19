@@ -4,7 +4,7 @@ name: Wheel-Manylinux-Nightly
 on:
   push:
     branches:
-      - try-containers-2
+      - try-containers-3
   pull_request:
     branches:
       - main
@@ -25,7 +25,7 @@ jobs:
           # - cuda: '10.1'
           #   image: 'tlcpack/package-cu101:v0.5'
           - cuda: '10.2'
-            image: 'tlcpack/package-cu102:bf872ef'
+            image: 'tlcpack/package-cu102:v0.5'
 
     runs-on: ubuntu-latest
 
