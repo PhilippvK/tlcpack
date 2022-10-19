@@ -3,7 +3,7 @@ name: Conda-GPU-Nightly
 on:
   push:
     branches:
-      - main
+      - try-containers-1
   pull_request:
     branches:
       - main
