@@ -96,7 +96,7 @@ echo set\(HIDE_PRIVATE_SYMBOLS ON\) >> config.cmake
 echo set\(USE_RPC ON\) >> config.cmake
 echo set\(USE_SORT ON\) >> config.cmake
 echo set\(USE_GRAPH_RUNTIME ON\) >> config.cmake
-echo set\(USE_ETHOSN /opt/arm/ethosn-driver\) >> config.cmake
+# echo set\(USE_ETHOSN /opt/arm/ethosn-driver\) >> config.cmake
 echo set\(USE_ARM_COMPUTE_LIB /opt/arm/acl\) >> config.cmake
 echo set\(USE_MICRO ON\) >> config.cmake
 echo set\(USE_MICRO_STANDALONE_RUNTIME ON\) >> config.cmake
