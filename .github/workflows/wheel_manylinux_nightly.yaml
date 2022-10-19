@@ -4,7 +4,7 @@ name: Wheel-Manylinux-Nightly
 on:
   push:
     branches:
-      - try-containers-1
+      - try-containers-2
   pull_request:
     branches:
       - main
