@@ -33,11 +33,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: TVM checkout
       run: |
-        git clone https://github.com/apache/tvm tvm
-        git checkout 6c9356fd18d0be4282acf3d428ce6f72f8e91e52
-        git submodule update --init --recursive
+        git clone https://github.com/apache/tvm tvm --recursive
+        # git reset --hard 6c9356f
+        # git submodule update --init --recursive
     - name: Sync Package
-      run: python common/sync_package.py --cuda ${{ matrix.config.cuda }} ${{ matrix.pkg }}
+      run: python common/sync_package.py --cuda ${{ matrix.config.cuda }} --revision 6c9356f ${{ matrix.pkg }}
     - name: Build
       env:
         IMAGE: ${{ matrix.config.image }}
