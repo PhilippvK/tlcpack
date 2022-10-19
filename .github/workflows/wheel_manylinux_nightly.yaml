@@ -4,7 +4,7 @@ name: Wheel-Manylinux-Nightly
 on:
   push:
     branches:
-      - try-containers-5
+      - try-containers-6
   pull_request:
     branches:
       - main
@@ -18,14 +18,14 @@ jobs:
         pkg: ['tlcpack-nightly']
         # matrix of build configs
         config:
-          - cuda: 'none'
-            image: 'tlcpack/package-cpu:bf872ef'
+          # - cuda: 'none'
+          #   image: 'tlcpack/package-cpu:bf872ef'
           # - cuda: '10.0'
           #   image: 'tlcpack/package-cu100:v0.5'
           # - cuda: '10.1'
           #   image: 'tlcpack/package-cu101:v0.5'
           - cuda: '10.2'
-            image: 'tlcpack/package-cu102:b62a9ce'
+            image: 'tlcpack/package-cu102:fe61a8d'
 
     runs-on: ubuntu-latest
 
