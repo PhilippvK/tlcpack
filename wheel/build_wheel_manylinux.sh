@@ -21,7 +21,8 @@ function in_array() {
 }
 
 function build_tlcpack_wheel() {
-    PYTHON_BIN="python"
+    python_dir=$1
+    PYTHON_BIN="${python_dir}/bin/python"
 
     cd "${TVM_PYTHON_DIR}" && \
         ${PYTHON_BIN} setup.py bdist_wheel
@@ -120,7 +121,7 @@ do
     cpython_dir="/opt/conda/envs/py${python_version_str}/"
     if [ -d "${cpython_dir}" ]; then
       echo "Generating package for Python ${python_version}."
-      build_tlcpack_wheel
+      build_tlcpack_wheel ${cpython_dir}
 
       echo "Running auditwheel on package for Python ${python_version}."
       audit_tlcpack_wheel ${python_version_str}
