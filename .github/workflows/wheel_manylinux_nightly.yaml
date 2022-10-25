@@ -43,4 +43,5 @@ jobs:
       run: |
         python -m pip install github3.py
         python -m pip install pyOpenSSL --upgrade
+        python -m pip install cryptography --upgrade
         python wheel/wheel_upload.py --tag v0.7.dev1 tvm/python/repaired_wheels
