@@ -58,7 +58,7 @@ def name_with_cuda(args, package_name):
     return package_name + "-cu" + "".join(args.cuda.split("."))
 
 
-def get_version_tag():
+def get_version_tag(args):
     """
     Collect version strings using TVM's python/tvm/version.py.
 
@@ -68,7 +68,7 @@ def get_version_tag():
     - local_ver: includes major, minor, dev and last git hash
                  e.g. "0.8.dev1473+gb7488ef47".
     """
-    version_py = os.path.join("tvm", "version.py")
+    version_py = os.path.join(args.src, "version.py")
     libversion = {"__file__": version_py}
     exec(
         compile(open(version_py, "rb").read(), version_py, "exec"),
@@ -85,7 +85,7 @@ def get_version_tag():
 
 
 def update_libinfo(args):
-    pub_ver, local_ver = get_version_tag()
+    pub_ver, local_ver = get_version_tag(args)
 
     # Set the version to be compliant with what is accepted for
     # PyPI. A valid version string looks like "0.8.dev1473"
@@ -99,7 +99,7 @@ def update_libinfo(args):
 
 
 def update_setup(args, package_name):
-    pub_ver, local_ver = get_version_tag()
+    pub_ver, local_ver = get_version_tag(args)
 
     # Set the version to be compliant with what is accepted for
     # PyPI. A valid version string looks like "0.8.dev1473"
@@ -116,7 +116,7 @@ def update_setup(args, package_name):
 
 
 def update_conda(args, package_name):
-    pub_ver, _ = get_version_tag()
+    pub_ver, _ = get_version_tag(args)
 
     # create initial yaml file
     meta_yaml = os.path.join("conda", "recipe", "meta.yaml")
